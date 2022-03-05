@@ -1,5 +1,5 @@
 import asyncio
-from pyrogram import filter, Client
+from pyrogram import filters, Client
 from config import Conig
 
 Flux = Client("Test",
