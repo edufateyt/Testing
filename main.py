@@ -1,3 +1,4 @@
+import asyncio
 from pyrogram import filter, Client
 
 Client = Client("my_account")
