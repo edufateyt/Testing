@@ -10,6 +10,6 @@ Flux = Client("Test",
 
 @Flux.on_message(filters.command(["start"]))
 async def hello(client, message):
-    await update.reply_text(text="Hello Brother")
+    await message.reply_text(text="Hello Brother")
     
 Flux.run()
