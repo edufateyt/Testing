@@ -8,9 +8,10 @@ Flux = Client("Test",
                bot_token=Config.BOT_TOKEN
           )
 MENTION = "[{}](tg:user?id={})"
+MESSAGE = " Hi {}"
 @Flux.on_message(filters.command(["start"]))
 async def hello(client, message):
-    await message.reply_text(text="Hello {}")
+    await message.reply_text(text=MESSAGE)
 
 @Flux.on_message(filters.private & filters.text)
 async def echo(client, message):
