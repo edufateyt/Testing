@@ -13,7 +13,7 @@ async def hello(client, message):
     await message.reply_text(text="Hello Brother")
 
 @Flux.on_message(filters.private & filters.text)
-async def echo(client, message)
+async def echo(client, message):
      await message.reply(message.text)
     
 Flux.run()
