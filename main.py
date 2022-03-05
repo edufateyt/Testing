@@ -1,10 +1,11 @@
 import asyncio
 from pyrogram import filter, Client
+from config import Conig
 
 Flux = Client("Test",
-               api_id=config.API_ID,
-               api_hash=config.API_HASH,
-               bot_token=config.BOT_TOKEN
+               api_id=Config.API_ID,
+               api_hash=Config.API_HASH,
+               bot_token=Config.BOT_TOKEN
           )
 
 @Flux.on_message(filters.command(["start"]))
