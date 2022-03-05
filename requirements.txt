@@ -1,2 +1,2 @@
-pyrogram
-tgcrypto
+pyrogram #Library
+tgcrypto #PyrogramWorksFaster
