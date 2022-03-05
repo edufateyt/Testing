@@ -7,11 +7,10 @@ Flux = Client("Test",
                api_hash=Config.API_HASH,
                bot_token=Config.BOT_TOKEN
           )
-MENTION = "[{}](tg:user?id={})"
-MESSAGE = " Hi {}"
+
 @Flux.on_message(filters.command(["start"]))
 async def hello(client, message):
-    await message.reply_text(text=MESSAGE)
+    await message.reply_text(text="👋 Hi There!\n\nThis Bot Is Made For Testing Purposes 🌀\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram 🛠️.")
 
 @Flux.on_message(filters.private & filters.text)
 async def echo(client, message):
