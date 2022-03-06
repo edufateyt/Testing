@@ -1,7 +1,7 @@
 import asyncio
 from pyrogram import filters, Client
 from config import Config
-
+from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 Flux = Client("Test",
                api_id=Config.API_ID,
                api_hash=Config.API_HASH,
