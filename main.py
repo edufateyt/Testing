@@ -9,7 +9,7 @@ Flux = Client("Test",
           )
 
 @Flux.on_message(filters.command(["start"]))
-async def hello(client, message):
+  async def hello(client, message):
     await message.reply_text(
       text="👋 Hi There!\n\nThis Bot Is Made For Testing Purposes 🌀\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram 🛠️.",
       reply_markup = InlineKeyboardMarkup(
@@ -22,13 +22,13 @@ async def hello(client, message):
   )
 
 @Flux.on_message(filters.private & filters.text)
-async def echo(client, message):
-     await message.reply(message.text)
+ async def echo(client, message):
+     await message.reply_text(message.text)
     
       
 
 @Flux.on_callback_query()
-async def button(client, CallbackQuery):
+  async def button(client, CallbackQuery):
       data = CallbackQuery.data
       if "testing" in data:
           await CallbackQuery.message.edit("Thanks For Trying")
