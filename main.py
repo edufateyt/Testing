@@ -25,4 +25,12 @@ async def hello(client, message):
 async def echo(client, message):
      await message.reply(message.text)
     
+      
+
+@Flux.on_callback_query()
+async def button(client, CallbackQuery):
+      data = CallbackQuery.data
+      if "testing" in data:
+          await CallbackQuery.message.edit("Thanks For Trying")
+      
 Flux.run()
