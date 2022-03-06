@@ -22,8 +22,8 @@ async def hello(client, message):
   )
 
 @Flux.on_message(filters.private & filters.text)
-async def echo(client, message):
-    await message.reply_text(message.text)
+def echo(client, message):
+    message.reply(message.text)
     
       
 
