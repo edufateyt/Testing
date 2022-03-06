@@ -21,12 +21,6 @@ async def hello(client, message):
       
   )
 
-@Flux.on_message(filters.private & filters.text)
-def echo(client, message):
-    message.reply(message.text)
-    
-      
-
 @Flux.on_callback_query()
 async def button(client, CallbackQuery):
       data = CallbackQuery.data
