@@ -22,8 +22,8 @@ async def hello(Client, message):
   )
       
 @Flux.on_callback_query()
-async def button(Client, CallbackQuery):
-data = CallbackQuery.data
+async def button(Flux: Client,cmd: CallbackQuery):
+data = cmd.data
 if "testing" in data:
 await CallbackQuery.message.edit("Thanks For Trying")
       
