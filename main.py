@@ -36,18 +36,15 @@ async def button(Client, CallbackQuery):
     )
 @Flux.on_message(filters.command(["photo"]))
 async def start(Client, message):
-  await message.send_photo(
+  await message.reply_photo(
     photo = "https://telegra.ph/file/1c0e843d1d9206257b3ce.png",
     caption="My Owner's PFP"
   )
 @Flux.on_message(filters.command(["doc"]))
 async def start(Client, message):
-  await message.send_document(
+  await message.reply_document(
     document ='https://telegra.ph/file/1c0e843d1d9206257b3ce.png',
     caption="My Owner's PFP"
   )  
-@Flux.on_message(filters.command(["kroz"]))
-async def start(Client, message):
-  await message.reply_photo("AgACAgUAAx0CWGhodQACV3ViJfvjdNi_E8rb9FxlMar12HH4wQACRbAxG0q1MVW_uO1UI442uwAIAQADAgADeAAHHgQ")
 
 Flux.run()
