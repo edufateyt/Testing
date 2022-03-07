@@ -25,7 +25,14 @@ async def button(Client, CallbackQuery):
   data = CallbackQuery.data
   if 'custom' in data:
     await CallbackQuery.message.edit(
-      text= "Yepp, It Works!"
+      text= "Yepp, It Works!",
+      parse_mode = "Markdown",
+      disable_web_page_preview = true,
+      reply_markup = InlineKeyboardMarkup(
+        [
+          [ InlineKeyboardButton('check', url = t.me/Fluxbots)]
+        ]
+      )
     )
   
 Flux.run()
