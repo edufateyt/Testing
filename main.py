@@ -8,18 +8,19 @@ Flux = Client("Test",
                api_hash=Config.API_HASH,
                bot_token=Config.BOT_TOKEN
           )
-text="👋 Hi There!\n\nThis Bot Is Made For Testing Purposes 🌀\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram 🛠."
 
+START_TXT = """👋 Hi There!\n\nThis Bot Is Made For Testing Purposes 🌀\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram 🛠."""
 @Flux.on_message(filters.command(["start"]))
 async def start(Client, message):
+  text= START_TXT.format(update.from_user.mention)
   await message.reply_text(
     text=text,
     disable_web_page_preview=True,
     reply_markup=InlineKeyboardMarkup(
-    [
-      InlineKeyboardButton('Developer', url='t.me/fluxbots')
-    ]
+        [
+            InlineKeyboardButton('Developer', url='t.me/fluxbots')
+        ]
+    )
   )
- )
   
 Flux.run()
