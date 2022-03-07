@@ -30,7 +30,7 @@ async def button(Client, CallbackQuery):
       disable_web_page_preview = True,
       reply_markup = InlineKeyboardMarkup(
         [
-          [ InlineKeyboardButton('Channel', url = https://t.me/Fluxbots)]
+          [ InlineKeyboardButton('Channel', url = 't.me/Fluxbots')]
         ]
       )
     )
