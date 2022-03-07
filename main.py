@@ -12,6 +12,14 @@ Flux = Client("Test",
 START_TXT = """👋 Hi There!\n\nThis Bot Is Made For Testing Purposes 🌀\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram 🛠."""
 @Flux.on_message(filters.command(["start"]))
 async def start(Client, message):
-  await message.reply_text(text="Hi")
+  await message.reply_text(
+    text="Hi",
+    disable_web_page_preview =True,
+    reply_markup = InlineKeyboardMarkup(
+      [
+        [InlineKeyboardButton('Developer', url='t.me/TheMalwareAwakens'), InlineKeyboardButton('Bots', url='t.me/TheMalwareZone')]
+      ]
+    )
+  )
   
 Flux.run()
