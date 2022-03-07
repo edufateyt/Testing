@@ -22,8 +22,8 @@ async def start(Client, message):
   )
 @Flux.on_callback_query()
 async def button(Client, CallbackQuery):
-  cb_data = CallbackQuery.data
-  if 'custom' in cb_data:
+  data = CallbackQuery.data
+  if 'custom' in data:
     await CallbackQuery.message.edit(text= "works perfectly")
   
 Flux.run()
