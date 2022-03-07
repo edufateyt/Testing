@@ -46,5 +46,11 @@ async def start(Client, message):
     document ='https://telegra.ph/file/1c0e843d1d9206257b3ce.png',
     caption="My Owner's PFP"
   )  
+@Flux.on_message(filters.command(["kroz"]))
+async def start(Client, message):
+  await message.send_cached_media(
+    file_id = AgACAgQAAxkBAAERh1RiJfC_a-neAhxkv4LLSXP9X71L2gACYK0xG8UINVF8CATyONSJHwEAAwIAA3gAAyME,
+    caption="My Owner's PFP"
+  )    
 
 Flux.run()
