@@ -34,5 +34,8 @@ async def button(Client, CallbackQuery):
         ]
       )
     )
+@Flux.on_message(filters.command(["photo"]))
+async def start(Client, message):
+  await message.send_photo(https://telegra.ph/file/1c0e843d1d9206257b3ce.png)  
   
 Flux.run()
