@@ -21,3 +21,4 @@ async def start(Client, message):
   )
  )
   
+Flux.run()
