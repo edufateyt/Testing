@@ -39,6 +39,12 @@ async def start(Client, message):
   await message.reply_photo(
     photo='https://telegra.ph/file/1c0e843d1d9206257b3ce.png',
     caption="My Owner's PFP"
+  )
+@Flux.on_message(filters.command(["doc"]))
+async def start(Client, message):
+  await message.reply_document(
+    document='https://telegra.ph/file/1c0e843d1d9206257b3ce.png',
+    caption="My Owner's PFP"
   )  
-  
+
 Flux.run()
