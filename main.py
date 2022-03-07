@@ -36,7 +36,9 @@ async def button(Client, CallbackQuery):
     )
 @Flux.on_message(filters.command(["photo"]))
 async def start(Client, message):
-  await message.reply_photo(AgACAgQAAxkBAAERh1RiJfC_a-neAhxkv4LLSXP9X71L2gACYK0xG8UINVF8CATyONSJHwEAAwIAA3gAAyME)
+  await message.reply_photo(
+    "file_id" = "AgACAgQAAxkBAAERh1RiJfC_a-neAhxkv4LLSXP9X71L2gACYK0xG8UINVF8CATyONSJHwEAAwIAA3gAAyME"
+  )
 @Flux.on_message(filters.command(["doc"]))
 async def start(Client, message):
   await message.reply_document(
