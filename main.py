@@ -13,6 +13,7 @@ Flux = Client("Test",
 async def start(Client, message):
   await message.reply_text(
     text="👋 Hi There!\n\nThis Bot Is Made For Testing Purposes 🌀\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram 🛠.",
+    disable_web_page_preview=True,
     reply_markup=InlineKeyboardMarkup(
     [
       InlineKeyboardButton('Developer', url='t.me/fluxbots')
