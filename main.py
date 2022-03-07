@@ -11,7 +11,7 @@ Flux = Client("Test",
 @Flux.on_message(filters.command(["start"]))
 async def start(Client, message):
   await message.reply_text(
-    text="👋 Hi There!\n\nThis Bot Is Made For Testing Purposes 🌀\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram 🛠.",
+    text="**👋 Hi There!\n\nThis Bot Is Made For Testing Purposes.\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram.**",
     disable_web_page_preview =True,
     reply_markup = InlineKeyboardMarkup(
       [
@@ -25,7 +25,7 @@ async def button(Client, CallbackQuery):
   data = CallbackQuery.data
   if 'custom' in data:
     await CallbackQuery.message.edit(
-      text= "Yepp, It Works!",
+      text= "**Yepp, It Works!**",
       parse_mode = "Markdown",
       disable_web_page_preview = True,
       reply_markup = InlineKeyboardMarkup(
