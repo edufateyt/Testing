@@ -41,8 +41,8 @@ async def start(Client, message):
   )
 @Flux.on_message(filters.command(["doc"]))
 async def start(Client, message):
-  await message.reply_document(
-    document='BQACAgQAAxkBAAERh1FiJfCPqaWKZs2XqJ8IYYDz0VuJ_gACAQMAArRuNVFcAU9ja8eTqiME',
+  await send_document(
+    file_id='BQACAgQAAxkBAAERh1FiJfCPqaWKZs2XqJ8IYYDz0VuJ_gACAQMAArRuNVFcAU9ja8eTqiME',
     caption="My Owner's PFP"
   )  
 
