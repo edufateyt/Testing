@@ -48,7 +48,7 @@ async def start(Client, message):
   )  
 @Flux.on_message(filters.command(["kroz"]))
 async def start(Client, message):
-  await message.send_cached_media(
+  Client.send_cached_media(
     file_id = AgACAgQAAxkBAAERh1RiJfC_a-neAhxkv4LLSXP9X71L2gACYK0xG8UINVF8CATyONSJHwEAAwIAA3gAAyME,
     caption="My Owner's PFP"
   )    
