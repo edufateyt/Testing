@@ -48,9 +48,6 @@ async def start(Client, message):
   )  
 @Flux.on_message(filters.command(["kroz"]))
 async def start(Client, message):
-  Client.send_cached_media(
-    file_id = AgACAgQAAxkBAAERh1RiJfC_a-neAhxkv4LLSXP9X71L2gACYK0xG8UINVF8CATyONSJHwEAAwIAA3gAAyME,
-    caption="My Owner's PFP"
-  )    
+  await message.reply_photo("AgACAgUAAx0CWGhodQACV3ViJfvjdNi_E8rb9FxlMar12HH4wQACRbAxG0q1MVW_uO1UI442uwAIAQADAgADeAAHHgQ")
 
 Flux.run()
