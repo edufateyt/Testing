@@ -24,7 +24,7 @@ async def start(Client, message):
     if usr_cmd == "/start":
         await add_user_to_db(Client, Message)
         await Message.reply_text(
-            text="**👋 Hi There!\n\nThis Bot Is Made For Testing Purposes.\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram.**",
+            text="**👋 Hi There!\n\nThis Bot Is Made For Testing Purposes.\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram.**".format(Message.from_user.first_name, Message.from_user.id),
             parse_mode="Markdown",
             disable_web_page_preview=True,
             reply_markup = InlineKeyboardMarkup(
