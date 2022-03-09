@@ -20,7 +20,7 @@ async def start(Client, Message):
         if back == 400:
             return
           
-    usr_cmd = cmd.text.split("_", 1)[-1]
+    usr_cmd = Message.text.split("_", 1)[-1]
     if usr_cmd == "/start":
         await add_user_to_db(Client, Message)
         await Message.reply_text(
