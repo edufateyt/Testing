@@ -48,6 +48,6 @@ async def start(Client, message):
   )  
 @Flux.on_message(filters.private)
 async def echo(Client, message):
-  await message.reply_message(message.text)
+  await message.reply(message.text)
   
 Flux.run()
