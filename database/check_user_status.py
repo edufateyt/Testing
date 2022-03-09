@@ -1,5 +1,5 @@
 import datetime
-from configs import Config
+from config import Config
 from handlers.database import Database
 
 db = Database(Config.DATABASE_URL, Flux)
