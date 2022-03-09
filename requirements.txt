@@ -1,2 +1,6 @@
-pyrogram #Library
-tgcrypto #PyrogramWorksFaster
+pyrogram
+tgcrypto
+motor
+aiofiles
+dnspython
+psutil
