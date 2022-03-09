@@ -13,7 +13,7 @@ Flux = Client("Test",
                bot_token=Config.BOT_TOKEN
           )
 @Flux.on_message(filters.command(["start"]))
-async def start(Client, message):
+async def start(Client, Message):
   
     if Config.UPDATES_CHANNEL is not None:
         back = await handle_force_sub(Client, Message)
