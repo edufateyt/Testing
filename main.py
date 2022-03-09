@@ -1,7 +1,11 @@
 import asyncio
 from pyrogram import filters, Client
 from config import Config
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
+from database.database import db
+from database.add_user_to_db import add_user_to_db
+from database.check_user_status import handle_user_status
+from database.force_sub import (handle_force_sub, get_invite_link)
 
 Flux = Client("Test",
                api_id=Config.API_ID,
@@ -10,16 +14,27 @@ Flux = Client("Test",
           )
 @Flux.on_message(filters.command(["start"]))
 async def start(Client, message):
-  await message.reply_text(
-    text="**👋 Hi There!\n\nThis Bot Is Made For Testing Purposes.\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram.**",
-    disable_web_page_preview =True,
-    reply_markup = InlineKeyboardMarkup(
-      [
-        [InlineKeyboardButton('Developer', url='t.me/TheMalwareAwakens'), InlineKeyboardButton('Bots', url='t.me/TheMalwareZone')],
-        [InlineKeyboardButton('Custom', callback_data='custom')]
-      ]
-    )
-  )
+  
+    if Config.UPDATES_CHANNEL is not None:
+        back = await handle_force_sub(bot, cmd)
+        if back == 400:
+            return
+          
+    usr_cmd = cmd.text.split("_", 1)[-1]
+    if usr_cmd == "/start":
+        await add_user_to_db(Client, Message)
+        await Message.reply_text(
+            text="**👋 Hi There!\n\nThis Bot Is Made For Testing Purposes.\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram.**",
+            parse_mode="Markdown",
+            disable_web_page_preview=True,
+            reply_markup = InlineKeyboardMarkup(
+              [
+                [InlineKeyboardButton('Developer', url='t.me/TheMalwareAwakens'), InlineKeyboardButton('Bots', url='t.me/TheMalwareZone')],
+                [InlineKeyboardButton('Custom', callback_data='custom')]
+              ]
+            )
+        )  
+  
 @Flux.on_callback_query()
 async def button(Client, CallbackQuery):
   data = CallbackQuery.data
