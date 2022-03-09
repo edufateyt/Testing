@@ -49,6 +49,40 @@ async def button(Client, CallbackQuery):
         ]
       )
     )
+    elif "refreshForceSub" in data:
+      if Config.UPDATES_CHANNEL:
+        if Config.UPDATES_CHANNEL.startswith("-100"):
+          channel_chat_id = int(Config.UPDATES_CHANNEL)
+          else:
+            channel_chat_id = Config.UPDATES_CHANNEL
+            try:
+              user = await Client.get_chat_member(channel_chat_id, cmd.message.chat.id)
+              if user.status == "kicked":
+                await Message.message.edit(
+                  text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/FluxSupport).",
+                  parse_mode="markdown",
+                  disable_web_page_preview=True
+                )
+                return
+              except UserNotParticipant:
+                invite_link = await get_invite_link(channel_chat_id)
+                await Message.message.edit(
+                  text="**You Still Didn't Join ☹️, Please Join My Updates Channel to use this Bot!**\n\n"
+                  "Due to Overload, Only Channel Subscribers can use the Bot!",
+                  reply_markup=InlineKeyboardMarkup(
+                    [
+                      [
+                        InlineKeyboardButton("🤖 Join Updates Channel", url="TheMalwareZone")
+                      ],
+                      [
+                        InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
+                      ]
+                    ]
+                  ),
+                  parse_mode="markdown"
+                )
+                
+   
 @Flux.on_message(filters.command(["photo"]))
 async def start(Client, message):
   await message.reply_photo(
