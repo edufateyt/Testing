@@ -33,6 +33,7 @@ async def start(Client, Message):
                 [InlineKeyboardButton('Custom', callback_data='custom')]
               ]
             )
+          await Message.reply_photo(photo="https://blogger.googleusercontent.com/img/a/AVvXsEgyayGmsfgTA7IKGG3fegpIswM4rA9MCmpNsGAKAM1yUy_mjId2PJ0u96g5EBCzjXnwOFbe_58cG9KR0V5lI7tBdGb1mvITFt7gjtOv23C0yFcLEf-ftgvBeBTIfVTrgbwCIa3of4g_oD6yZWZZdW5BxWh126raFqWWEy6RGI-dBIGUk5otWGkEyo7e=s320")
         )  
   
 @Flux.on_callback_query()
