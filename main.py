@@ -33,9 +33,8 @@ async def start(Client, Message):
                 [InlineKeyboardButton('Custom', callback_data='custom')]
               ]
             )
-          await Message.reply_photo(photo="https://blogger.googleusercontent.com/img/a/AVvXsEgyayGmsfgTA7IKGG3fegpIswM4rA9MCmpNsGAKAM1yUy_mjId2PJ0u96g5EBCzjXnwOFbe_58cG9KR0V5lI7tBdGb1mvITFt7gjtOv23C0yFcLEf-ftgvBeBTIfVTrgbwCIa3of4g_oD6yZWZZdW5BxWh126raFqWWEy6RGI-dBIGUk5otWGkEyo7e=s320")
-        )  
-  
+        )
+
 @Flux.on_callback_query()
 async def button(Client, CallbackQuery):
   data = CallbackQuery.data
@@ -54,34 +53,34 @@ async def button(Client, CallbackQuery):
     if Config.UPDATES_CHANNEL:
       if Config.UPDATES_CHANNEL.startswith("-100"):
         channel_chat_id = int(Config.UPDATES_CHANNEL)
-        else:
-          channel_chat_id = Config.UPDATES_CHANNEL
-          try:
-            user = await Client.get_chat_member(channel_chat_id, cmd.message.chat.id)
-            if user.status == "kicked":
-              await Message.message.edit(
-                text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/FluxSupport).",
-                parse_mode="markdown",
-                disable_web_page_preview=True
-              )
-              return
-            except UserNotParticipant:
-              invite_link = await get_invite_link(channel_chat_id)
-              await Message.message.edit(
-                text="**You Still Didn't Join ☹️, Please Join My Updates Channel to use this Bot!**\n\n"
-                "Due to Overload, Only Channel Subscribers can use the Bot!",
-                reply_markup=InlineKeyboardMarkup(
+      else:
+        channel_chat_id = Config.UPDATES_CHANNEL
+        try:
+          user = await Client.get_chat_member(channel_chat_id, cmd.message.chat.id)
+          if user.status == "kicked":
+            await Message.message.edit(
+              text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/FluxSupport).",
+              parse_mode="markdown",
+              disable_web_page_preview=True
+            )
+            return
+          except UserNotParticipant:
+            invite_link = await get_invite_link(channel_chat_id)
+            await Message.message.edit(
+              text="**You Still Didn't Join ☹️, Please Join My Updates Channel to use this Bot!**\n\n"
+              "Due to Overload, Only Channel Subscribers can use the Bot!",
+              reply_markup=InlineKeyboardMarkup(
+                [
                   [
-                    [
                       InlineKeyboardButton("🤖 Join Updates Channel", url="TheMalwareZone")
-                    ],
-                    [
+                  ],
+                  [
                       InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
-                    ]
                   ]
-                ),
-                parse_mode="markdown"
-              )
+                ]
+              ),
+              parse_mode="markdown"
+            )
                 
    
 @Flux.on_message(filters.command(["photo"]))
