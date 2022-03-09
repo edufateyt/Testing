@@ -2,7 +2,7 @@ import datetime
 from config import Config
 from handlers.database import Database
 
-db = Database(Config.DATABASE_URL, Config.UPDATES_CHANNEL)
+db = Database(Config.DATABASE_URL, Config.BOT_USERNAME)
 
 async def handle_user_status(Client, Message):
     chat_id = Message.from_user.id
