@@ -1,6 +1,6 @@
 import datetime
 from config import Config
-from handlers.database import Database
+from database.database import Database
 
 db = Database(Config.DATABASE_URL, Config.BOT_USERNAME)
 
