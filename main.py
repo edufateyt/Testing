@@ -16,7 +16,7 @@ Flux = Client("Test",
 async def start(Client, message):
   
     if Config.UPDATES_CHANNEL is not None:
-        back = await handle_force_sub(bot, cmd)
+        back = await handle_force_sub(Client, Message)
         if back == 400:
             return
           
