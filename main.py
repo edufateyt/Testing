@@ -18,7 +18,6 @@ async def start(Client, Message):
     photo="https://telegra.ph/file/1c0e843d1d9206257b3ce.png",
     caption="**👋 Hi There!\n\nThis Bot Is Made For Testing Purposes.\n\n If You Want To Contribute, Help The Developer In Learning Pyrogram.**",
     parse_mode="Markdown",
-    disable_web_page_preview=True,
     reply_markup = InlineKeyboardMarkup(
       [
         [InlineKeyboardButton('Developer', url='t.me/TheMalwareAwakens'), InlineKeyboardButton('Bots', url='t.me/TheMalwareZone')],
